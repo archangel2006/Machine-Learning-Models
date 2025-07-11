@@ -1,5 +1,7 @@
 # 🏠 House Price Prediction Model using Ridge Regression
 
+(Date: July11,2025)
+
 This project aims to build a **regression-based machine learning model** to predict **median house prices** in California. It uses the **California Housing Dataset** and compares **Linear**, **Ridge**, and **Lasso** Regression models. The final model selected is **Ridge Regression** for its performance and generalization capability.
 
 ---
