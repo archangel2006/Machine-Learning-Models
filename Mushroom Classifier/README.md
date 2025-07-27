@@ -9,6 +9,13 @@ This project builds and compares multiple classification models to determine whe
 ## 📌 Objective  
 To classify mushrooms as **edible (e)** or **poisonous (p)** based on their categorical features. The goal is to build a robust model that generalizes well and can assist in safe mushroom identification.
 
+Comparing and evaluating three classification models:
+- K-Nearest Neighbors (KNN)
+- Logistic Regression
+- Random Forest
+
+… and determine which performs best for mushroom classification.
+
 ---
 
 ## 📂 Dataset  
@@ -56,29 +63,19 @@ To classify mushrooms as **edible (e)** or **poisonous (p)** based on their cate
 
 ---
 
-## 📈 Evaluation
+## 🏆 Final Verdict
 
-### 🔢 Classification Report (Random Forest)
+Both **KNN** and **Random Forest** achieved perfect classification on the test set. However:
 
-| Metric     | Class e (Edible) | Class p (Poisonous) | Interpretation |
-|------------|------------------|----------------------|----------------|
-| Precision  | 1.00             | 1.00                 | No false positives |
-| Recall     | 1.00             | 1.00                 | No false negatives |
-| F1-Score   | 1.00             | 1.00                 | Perfect prediction |
-| Support    | 839              | 781                  | Balanced test set |
-| Accuracy   | —                | —                    | **100% overall** |
-| Macro Avg  | —                | —                    | Precision: 1.00, Recall: 1.00, F1: 1.00 |
-| Weighted Avg| —               | —                    | All classes well-represented |
+- **Random Forest** may generalize better to unseen data due to ensemble learning.
+- **KNN** is simpler but slower for large datasets at inference time.
+
+📌 In practical applications, **Random Forest** is preferred due to efficiency and robustness.
 
 ---
+## 👤 Author
+Name: Archangel
+GitHub: @archangel2006
+Email: 26.archangel@gmail.com
 
-### 🧮 Confusion Matrix (Random Forest)
-
-| Actual \ Pred | Pred e | Pred p | Interpretation |
-|---------------|--------|--------|----------------|
-| **Actual e**  | 839    | 0      | All edible mushrooms correctly identified |
-| **Actual p**  | 0      | 781    | All poisonous mushrooms correctly identified |
-
----
-
-
+Feel free to ⭐️ this repository or fork it!
