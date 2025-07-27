@@ -1,72 +1,84 @@
-# 🍄 Mushroom Classifier: Edible or Poisonous?
+# 🍄 Mushroom Classification – Edible or Poisonous?
 
-A machine learning project to classify mushrooms as **edible** or **poisonous** based on their physical characteristics. Built using supervised learning models like **K-Nearest Neighbors (KNN)**, **Logistic Regression**, and **Random Forest**, this project aims to find the most accurate and reliable classifier for mushroom safety.
+(Date: July 27, 2025)
 
----
-
-## 📌 Objective
-
-To develop a machine learning model that can **predict the edibility of mushrooms** using a variety of physical attributes such as odor, cap shape, gill size, and color. The goal is to **compare multiple classifiers** and determine the most effective one for this task.
+This project builds and compares multiple classification models to determine whether a mushroom is **edible** or **poisonous** based on its features. The dataset is processed and evaluated using **K-Nearest Neighbors (KNN)**, **Logistic Regression**, and **Random Forest** classifiers. Evaluation metrics such as accuracy, precision, recall, and F1-score are used to compare model performance.
 
 ---
 
-## 🧠 Models Used
-
-- ✅ **K-Nearest Neighbors (KNN)**
-- ✅ **Logistic Regression**
-- ✅ **Random Forest Classifier**
+## 📌 Objective  
+To classify mushrooms as **edible (e)** or **poisonous (p)** based on their categorical features. The goal is to build a robust model that generalizes well and can assist in safe mushroom identification.
 
 ---
 
-## 📂 Dataset
+## 📂 Dataset  
+**Source:** [UCI Mushroom Dataset](https://www.kaggle.com/datasets/uciml/mushroom-classification)  
+**Target Variable:** `class` (e = edible, p = poisonous)
 
-- **Source**: [Kaggle – Mushroom Classification Dataset](https://www.kaggle.com/datasets/uciml/mushroom-classification)
-- **Size**: ~8,000 samples
-- **Features**: 22 categorical features
-- **Target Variable**:
-  - `e` = Edible
-  - `p` = Poisonous
-
----
-
-## 🧪 Project Workflow
-
-### 1. Data Loading & Exploration
-- Checked feature names and unique values
-- Visualized class distribution (edible vs poisonous)
-- Identified important categorical features
-
-### 2. Preprocessing
-- Label encoding for all categorical features
-- Handled missing values (`?` in `stalk-root`)
-- Train-test split (80/20)
-- Feature scaling applied (for KNN)
-
-### 3. Model Training
-Trained all three classifiers on the training set:
-- **KNN** (with scaling)
-- **Logistic Regression** (no scaling)
-- **Random Forest** (no scaling)
-
-### 4. Evaluation
-- Metrics: **Accuracy, Precision, Recall, F1-Score**
-- Confusion matrix visualized for each model
-
-### 5. Comparison & Conclusion
-| Metric         | KNN   | Logistic Regression | Random Forest |
-|----------------|-------|----------------------|----------------|
-| Accuracy       | 1.00  | 0.9477               | 1.00           |
-| Precision      | 1.00  | 0.9439               | 1.00           |
-| Recall         | 1.00  | 0.9476               | 1.00           |
-| F1-Score       | 1.00  | 0.9458               | 1.00           |
-
-- **Best Models**: KNN and Random Forest (perfect classification)
-- **Top Feature**: `odor` was the most informative feature for predicting toxicity.
+**Features (after encoding):**
+- cap-shape
+- cap-surface
+- cap-color
+- bruises
+- odor
+- gill-attachment
+- gill-spacing
+- gill-size
+- gill-color  
+*(+ several more, total 22 features after encoding)*
 
 ---
 
-## 📌 Key Insights
+## 🔍 Exploratory Data Analysis (EDA)
+- Checked shape, data types, null values (none found).
+- Examined class distribution – fairly balanced.
+- Analyzed frequency of each feature's unique values.
+- Visualized correlation between selected categorical features and class.
+- Inspected label distribution with bar plots.
 
-- Mushrooms with certain odors are highly predictive of being poisonous.
-- Tree-based models and distance-based models performed perfectly due to clear class separability.
-- Logistic Regression had slightly lower performance due to its linear nature.
+---
+
+## ⚙️ Preprocessing  
+- Label encoding applied to all categorical variables.
+- Train-test split using `train_test_split` (test size = 20%).
+- Feature scaling using `StandardScaler` (for KNN & Logistic Regression).
+- All models trained on the same preprocessed data for fair comparison.
+
+---
+
+## 🧠 Model Comparison
+
+| Model               | Accuracy | Precision | Recall | F1-Score | Notes |
+|--------------------|----------|-----------|--------|----------|-------|
+| KNN (k=5)           | 91.23%   | 0.90      | 0.92   | 0.91     | Sensitive to feature scaling |
+| Logistic Regression | 94.73%   | 0.95      | 0.95   | 0.95     | Strong linear separator |
+| Random Forest       | **100%** | 1.00      | 1.00   | 1.00     | Perfect accuracy, robust model |
+
+---
+
+## 📈 Evaluation
+
+### 🔢 Classification Report (Random Forest)
+
+| Metric     | Class e (Edible) | Class p (Poisonous) | Interpretation |
+|------------|------------------|----------------------|----------------|
+| Precision  | 1.00             | 1.00                 | No false positives |
+| Recall     | 1.00             | 1.00                 | No false negatives |
+| F1-Score   | 1.00             | 1.00                 | Perfect prediction |
+| Support    | 839              | 781                  | Balanced test set |
+| Accuracy   | —                | —                    | **100% overall** |
+| Macro Avg  | —                | —                    | Precision: 1.00, Recall: 1.00, F1: 1.00 |
+| Weighted Avg| —               | —                    | All classes well-represented |
+
+---
+
+### 🧮 Confusion Matrix (Random Forest)
+
+| Actual \ Pred | Pred e | Pred p | Interpretation |
+|---------------|--------|--------|----------------|
+| **Actual e**  | 839    | 0      | All edible mushrooms correctly identified |
+| **Actual p**  | 0      | 781    | All poisonous mushrooms correctly identified |
+
+---
+
+
