@@ -1,6 +1,6 @@
 # Machine-Learning-Models
 
-Welcome to the **Machine Learning Model Zoo**, a curated collection of beginner-to-intermediate level ML classification and regression projects made by me. Each folder contains a self-contained project complete with dataset handling, model training, evaluation, and results visualization.
+Welcome to the **Machine Learning Models**, a curated collection of beginner-to-intermediate level ML classification and regression projects made by me. Each folder contains a self-contained project complete with dataset handling, model training, evaluation, and results visualization.
 
 ---
 
