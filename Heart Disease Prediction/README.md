@@ -19,7 +19,7 @@ Comparing and evaluating three classification models:
 ---
 
 ## 📂 Dataset  
-**Source:** UCI Heart Disease Dataset  
+**Source:** https://www.kaggle.com/datasets/cherngs/heart-disease-cleveland-uci
 **Target Variable:** `target` (1 = disease, 0 = no disease)
 
 **Features:**
