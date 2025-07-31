@@ -71,9 +71,44 @@ This project investigates the relationship between students' social media usage 
 
 ## 🧪 Modeling
 
-### 1. Classification: Predicting Academic Performance Impact (`Affects_Academic_Performance`)
+**1. Classification: Predicting Academic Performance Impact (`Affects_Academic_Performance`)**
 
-- **Model**: Logistic Regression
-- **Accuracy**: **100%**
-- **Cross-Validated Accuracy**: **~99.6%**
+- Model: **Logistic Regression**
+- Accuracy: **100%**
+- Cross-Validated Accuracy: **~99.6%**
 - **Confusion Matrix**:
+  [[46, 0],
+[ 0, 95]]
+- No false positives or negatives – Excellent precision and recall.
+
+
+---
+
+**2. Regression: Predicting Addiction Score (`Addicted_Score`)**
+
+- **Model**: Linear Regression
+- **Evaluation**:
+- Used RMSE and R² Score to evaluate.
+- Good model fit based on predicted vs actual plots.
+- **Train/Test Split**: 80/20
+
+---
+
+## ✅ Final Dataset
+
+- **Final Feature Set**: 134 columns
+- Combined:
+- Encoded categorical data
+- Scaled numeric features
+
+---
+
+## 👤 Author
+
+- **Name**: Archangel
+- **GitHub**: [@archangel2006](https://github.com/archangel2006)
+- **Email**: 26.archangel@gmail.com
+
+Feel free to ⭐️ this repository or fork it for your own use.
+
+
